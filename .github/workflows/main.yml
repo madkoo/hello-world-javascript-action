@@ -8,7 +8,7 @@ jobs:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
-        uses: madkoo/hello-world-javascript-action@v1
+        uses: actions/checkout@v2
       - name: Hello world action step
         id: hello
         #uses: madkoo/hello-world-javascript-action@v1 for public repo
