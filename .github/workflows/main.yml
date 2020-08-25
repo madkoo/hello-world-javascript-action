@@ -1,21 +1,20 @@
 on: ["push"]
 
-
 jobs:
-  hellow_world_job:
+  hello_world_job:
     runs-on: ubuntu-latest
     name: A job that says hello
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
-        uses: madkoo/hello-world-javascript-action@v1
-      - name: Hellow world action step
-        id: Hello
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        id: hello
         #uses: madkoo/hello-world-javascript-action@v1 for public repo
         uses: ./ #Uses an action in the root dir
         with:
           who-to-greet: 'Mona the octocat'
      # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{steps.hello.}}"
+        run: echo "The time was ${{steps.hello.outputs.time}}"
